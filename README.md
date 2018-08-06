@@ -11,7 +11,7 @@ Estos programas devuelven un gráfico de los partidos ganados por el jugador 1 v
 
 Los valores predeterminados en tenisSimulator_v.1 son:
 
-- performancePuntoDefinitivo = 70 (es decir que el jugador 1 tiene un 70% de chances de ganar los "40-40" frente al jugador 2.
+- performancePuntoDefinitivo = 70 (es decir que el jugador 1 tiene un 70% de chances de ganar los "40-40" frente al jugador 2).
 - performancePuntoNormalMinima = 0
 - performancePuntoNormalMaxima = 100 
 - intervalo = 1 (el programa va a simular partidos tomando como performancePuntoNormal desde 0 a 100 de uno en uno).
@@ -20,7 +20,7 @@ Los valores predeterminados en tenisSimulator_v.1 son:
 
 Los valores predeterminados en tenisSimulator_v.1 son:
 
-- performancePuntoNormal = 70 (es decir que el jugador 1 tiene un 70% de chances de ganar los "40-40" frente al jugador 2.
+- performancePuntoNormal = 70 (es decir que el jugador 1 tiene un 70% de chances de ganar los "40-40" frente al jugador 2).
 - performancePuntoDefinitivoMinima = 0
 - performancePuntoDefinitivoMaxima = 100 
 - intervalo = 1 (el programa va a simular partidos tomando como performancePuntoDefinitivo desde 0 a 100 de uno en uno).
