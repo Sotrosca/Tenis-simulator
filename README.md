@@ -15,15 +15,15 @@ Los valores predeterminados en tenisSimulator_v.1 son:
 - performancePuntoNormalMinima = 0
 - performancePuntoNormalMaxima = 100 
 - intervalo = 1 (el programa va a simular partidos tomando como performancePuntoNormal desde 0 a 100 de uno en uno).
-- cantidadPartidos = 2000 (cantidad de partidos jugados en cada iteración).
+- cantidadPartidos = 5000 (cantidad de partidos jugados en cada iteración).
 
 
 Los valores predeterminados en tenisSimulator_v.1 son:
 
-- performancePuntoNormal = 70 (es decir que el jugador 1 tiene un 70% de chances de ganar los "40-40" frente al jugador 2).
+- performancePuntoNormal = 50 (es decir que el jugador 1 tiene un 70% de chances de ganar los "40-40" frente al jugador 2).
 - performancePuntoDefinitivoMinima = 0
 - performancePuntoDefinitivoMaxima = 100 
 - intervalo = 1 (el programa va a simular partidos tomando como performancePuntoDefinitivo desde 0 a 100 de uno en uno).
-- cantidadPartidos = 2000 (cantidad de partidos jugados en cada iteración).
+- cantidadPartidos = 10000 (cantidad de partidos jugados en cada iteración).
 
 Estos valores pueden modificarse a gusto y no alteran el funcionamiento del programa.
