@@ -70,11 +70,11 @@ class match(set):
 			jugador2.sets = 0
 
 matchOne = match()
-performancePuntoDefinitivo = 90 # Es la probabilidad de ganar un "40-40" para el jugador1.
+performancePuntoDefinitivo = 50 # Es la probabilidad de ganar un "40-40" para el jugador1.
 performancePuntoNormalMinima = 0 # Valor inicial de la iteración del programa.
 performancePuntoNormalMaxima = 100 # Valor final de la iteración del programa.
 intervalo = 1 
-cantidadPartidos = 1000 # Cantidad de partidos jugados en cada iteración.
+cantidadPartidos = 2000 # Cantidad de partidos jugados en cada iteración.
 partidos = []
 j = performancePuntoNormalMinima
 
