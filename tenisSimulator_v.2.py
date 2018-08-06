@@ -4,7 +4,7 @@ import numpy as np
 
 class player:
 	name = "Ricarlos"
-	performance = [50, 50]
+	performance = [50, 50] # El primer elemento determina la probabilidad de ganar un punto contra su rival, mientras que el segundo elemento determina la probabilidad de ganar un "40-40" contra su rival.
 	gamePoints = 0
 	games = 0
 	sets = 0
@@ -23,17 +23,14 @@ playerTwo = player()
 playerTwo.name = "Estelaura"
 
 class game:
-	gameName = 1
 
 	def jugarGame(self, jugador1, jugador2):
 		while (jugador1.gamePoints < 4) & (jugador2.gamePoints < 4):
 			numeroGanador = random.randint(1,100)
 			if (numeroGanador <= jugador1.performanceEspecial(jugador2)):
 				jugador1.gamePoints = jugador1.gamePoints + 1
-				#print(jugador1.name, str(jugador1.gamePoints), jugador2.name, str(jugador2.gamePoints))
 			else:
-				jugador2.gamePoints = jugador2.gamePoints + 1
-				#print(jugador1.name, str(jugador1.gamePoints), jugador2.name, str(jugador2.gamePoints))
+				jugador2.gamePoints = jugador2.gamePoints + 1		
 		if (jugador1.gamePoints > jugador2.gamePoints):
 			jugador1.games = jugador1.games + 1
 			jugador1.gamePoints = 0
@@ -44,24 +41,20 @@ class game:
 			jugador2.gamePoints = 0
 
 class set(game):
-	setName = 1
 
 	def jugarSet(self, jugador1, jugador2):
 		while (jugador1.games < 6) & (jugador2.games < 6):
 			self.jugarGame(jugador1, jugador2)
 		if (jugador1.games > jugador2.games):
 			jugador1.sets = jugador1.sets + 1
-			#print(jugador1.name, str(jugador1.games), jugador2.name, str(jugador2.games))
 			jugador1.games = 0
 			jugador2.games = 0
 		else:
 			jugador2.sets = jugador2.sets + 1
-			#print(jugador1.name, str(jugador1.games), jugador2.name, str(jugador2.games))
 			jugador1.games = 0
 			jugador2.games = 0
 
 class match(set):
-	matchName = 1
 	matchType = 2 # Cantidad de sets que debe ganar un jugador para ganar el partido.
 
 	def jugarMatch(self, jugador1,jugador2):
@@ -77,52 +70,24 @@ class match(set):
 			jugador2.sets = 0
 
 matchOne = match()
-performancePuntoDefinitivo = 90
-performanceMinima = 0
-performanceMaxima = 100
-intervalo = 1
-cantidadPartidos = 1000
+performancePuntoDefinitivo = 90 # Es la probabilidad de ganar un "40-40" para el jugador1.
+performancePuntoNormalMinima = 0 # Valor inicial de la iteración del programa.
+performancePuntoNormalMaxima = 100 # Valor final de la iteración del programa.
+intervalo = 1 
+cantidadPartidos = 1000 # Cantidad de partidos jugados en cada iteración.
 partidos = []
-j = performanceMinima
+j = performancePuntoNormalMinima
 
-while (j < (performanceMaxima + 1)):
+while (j < (performancePuntoNormalMaxima + 1)):
 	i = 1
 	playerOne.performance = [j, performancePuntoDefinitivo]
 	while (i < cantidadPartidos):
 		matchOne.jugarMatch(playerOne,playerTwo)
 		i = i + 1
-	#partidos.append([j, [playerOne.matches, playerTwo.matches]])
 	partidos.append(playerOne.matches)
 	playerOne.matches = 0
 	playerTwo.matches = 0
 	j = j + intervalo
 
-porcentaje = np.arange(performanceMinima, performanceMaxima + 1,intervalo)
-plt.show(plt.plot(porcentaje, (np.array(partidos) * (100 / cantidadPartidos))))
-
-performancePuntoNormal = 35
-performancePuntoDefinitivoMinima = 0
-performancePuntoDefinitivoMaxima = 100
-intervalo = 1
-cantidadPartidos = 100
-partidos = []
-j = performancePuntoDefinitivoMinima
-
-
-while (j < (performancePuntoDefinitivoMaxima + 1)):
-	i = 1
-	playerOne.performance = [performancePuntoNormal, j]
-	while (i < cantidadPartidos):
-		matchOne.jugarMatch(playerOne,playerTwo)
-		i = i + 1
-	#partidos.append([j, [playerOne.matches, playerTwo.matches]])
-	partidos.append(playerOne.matches)
-	playerOne.matches = 0
-	playerTwo.matches = 0
-	j = j + intervalo
-
-porcentaje = np.arange(performancePuntoDefinitivoMinima, performancePuntoDefinitivoMaxima + 1,intervalo)
-plt.show(plt.plot(porcentaje, (np.array(partidos) * (100 / cantidadPartidos))))
-
-
-
+dominio = np.arange(performancePuntoNormalMinima, performancePuntoNormalMaxima + 1,intervalo)
+plt.show(plt.plot(dominio, np.array(partidos)))
