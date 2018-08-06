@@ -1,2 +1,2 @@
 # Tenissimulator
-Simulación de partidos de tenis donde está establecido previamente el porcentaje que tiene cada jugador de ganar cada punto.
+Este programa simula partidos de tenis entre dos jugadores que tienen un cierto porcentaje de ganar cada punto que juegan
