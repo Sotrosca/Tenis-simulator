@@ -1,29 +1,22 @@
 # Tenissimulator
-Estos programas simulan partidos de tenis (sin ventajas en los games, es decir, que si van "40-40" el siguiente punto define el game) entre dos jugadores donde están predeterminados dos aspectos:
+Implementación de un simulador estadístico de partidos de tenis.
 
-- La probabilidad que tiene el jugador 1 de ganar cada punto frente al jugador 2 (performancePuntoNormal).
-- La probabilidad que tiene el jugador 1 de ganar un "40-40" frente al jugador 2 (performancePuntoDefinitivo).
+Los partidos se simulan instanciando la clase Match con la cantidad deseada de sets a ganar para terminar el partido y con la función que simulará la probabilidad de ganar cada punto del primer jugador, luego ejecutar el método play_full_match().
 
-El tenisSimulator_v.1 itera sobre performancePuntoNormal, mientras que performancePuntoDefinitivo se mantiene fijo.
-El tenisSiumlator_v.2 itera sobre performancePuntoDefinitivo, dejando fijo performancePuntoNormal.
+Los scripts "totally_even_players.py" y "worst_on_decisisve_games_simulation.py" simulan varios partidos con distintas funciones de probabilidad y crean un dataframe que puede ser utilizado para analizar la distribución de resultados posibles del partido.
 
-Estos programas devuelven un gráfico de los partidos ganados por el jugador 1 vs performancePuntoNormal o performancePuntoDefinitivo, según el programa ejecutado.
+"totally_even_players.py" simula varios partidos donde ambos jugadores tienen la misma probabilidad de ganar cada punto que se juega.
 
-Los valores predeterminados en tenisSimulator_v.1 son:
+"worst_on_decisisve_games_simulation.py" simula varios partidos donde el jugador 0 es levemente superior salvo a partir de que el set se pone (4, 4), donde el jugador 1 es el que empieza a "jugar mejor".
 
-- performancePuntoDefinitivo = 70 (es decir que el jugador 1 tiene un 70% de chances de ganar los "40-40" frente al jugador 2).
-- performancePuntoNormalMinima = 20
-- performancePuntoNormalMaxima = 80
-- intervalo = 1 (el programa va a simular partidos tomando como performancePuntoNormal desde 20 a 80 de uno en uno).
-- cantidadPartidos = 5000 (cantidad de partidos jugados en cada iteración).
+Esto se puede usar para simular partidos de jugadores que ceden ante la presión en momentos de definición o al contrario, que se vuelven fuertes en los momentos importantes.
 
+La clase Score es independiente del resto del desarrollo y simula un marcador de tenis. Puede utilizarse fuera de este trabajo.
 
-Los valores predeterminados en tenisSimulator_v.1 son:
+Por último el script get_matches_info.py consume un servicio de la API "Tennis Live Data" hosteada en "https://rapidapi.com/".
 
-- performancePuntoNormal = 50 (es decir que el jugador 1 tiene un 70% de chances de ganar los "40-40" frente al jugador 2).
-- performancePuntoDefinitivoMinima = 20
-- performancePuntoDefinitivoMaxima = 80
-- intervalo = 1 (el programa va a simular partidos tomando como performancePuntoDefinitivo desde 20 a 80 de uno en uno).
-- cantidadPartidos = 10000 (cantidad de partidos jugados en cada iteración).
+Este servicio devuelve los resultados de los partidos del torneo pasado por parámetro, que se puede utilizar para comparar los resultados obtenidos por el simulador.
 
-Estos valores pueden modificarse a gusto y no alteran el funcionamiento del programa.
+Los parámetros necesarios para conectarse a la API deberán ser seteados en el archivo "x-rapidapi-key.json".
+
+Todavía cosas por realizar, ante cualquier sugerencia o aporte que quieras realizar no dudes en contactarme a mi mail "facuserna93@gmail.com".
