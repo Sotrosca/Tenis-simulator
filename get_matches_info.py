@@ -1,11 +1,8 @@
 import requests
 import json
 
-# Opening JSON file
 f = open('x-rapidapi-key.json')
 
-# returns JSON object as 
-# a dictionary
 data = json.load(f)
 
 tournament_id = '1143'
@@ -19,6 +16,9 @@ headers = {
 
 response = requests.request("GET", url, headers=headers)
 
+if response.status_code == 200:
 
-with open(f'matches-{tournament_id}.json', 'wb') as outf:
-    outf.write(response.content)
+    with open(f'matches-{tournament_id}.json', 'wb') as outf:
+        outf.write(response.content)
+else:
+    print(f'Error ocurred with status code: {response.status_code}')
