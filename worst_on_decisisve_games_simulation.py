@@ -3,8 +3,8 @@ from Entities import Match
 import pandas as pd
 
 results = {}
-for i in range(1000):
-    match = Match(2, worst_on_decisive_games)
+for i in range(10000):
+    match = Match(1, worst_on_decisive_games)
     winner_index = match.play_full_match()
 
     if winner_index == 1:

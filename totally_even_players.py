@@ -2,8 +2,8 @@ from Entities import Match
 import pandas as pd
 
 results = {}
-for i in range(1000):
-    match = Match(2)
+for i in range(100000):
+    match = Match(1)
     winner_index = match.play_full_match()
 
     if winner_index == 1:
