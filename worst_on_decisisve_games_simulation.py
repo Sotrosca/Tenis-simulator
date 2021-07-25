@@ -1,7 +1,9 @@
+#%% Imports
 from PlayerDistributionFunctions import worst_on_decisive_games
-from Entities import Match
+from Match import Match
 import pandas as pd
 
+#%% Simulate matches
 results = {}
 for i in range(10000):
     match = Match(1, worst_on_decisive_games)
@@ -19,4 +21,5 @@ for i in range(10000):
     else:
         results[flat_match_score] = 1
 
+#%% Create dataframe
 df = pd.DataFrame(list(zip(results.keys(), results.values())), columns =['Result', 'Quantity'])

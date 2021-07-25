@@ -1,6 +1,8 @@
-from Entities import Match
+#%% Imports
+from Match import Match
 import pandas as pd
 
+#%% Simulate matches
 results = {}
 for i in range(100000):
     match = Match(1)
@@ -18,4 +20,5 @@ for i in range(100000):
     else:
         results[flat_match_score] = 1
 
+#%% Create dataframe
 df = pd.DataFrame(list(zip(results.keys(), results.values())), columns =['Result', 'Quantity'])
