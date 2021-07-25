@@ -1,5 +1,6 @@
 {
     "x-rapidapi-key" : "here-would-go-api-key",
     "x-rapidapi-host" : "here-would-go-api-host",
-    "api-url-endpoint" : "https://tennis-live-data.p.rapidapi.com/matches-results/1193"
+    "api-url-endpoint" : "https://tennis-live-data.p.rapidapi.com",
+    "api-matches-by-tournament-id-endpoint" : "/matches-results/"
 }
