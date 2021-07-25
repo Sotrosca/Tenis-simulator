@@ -1,4 +1,4 @@
-# Tenissimulator
+# Tenis-simulator
 Implementación de un simulador estadístico de partidos de tenis.
 
 Los partidos se simulan instanciando la clase Match con la cantidad deseada de sets a ganar para terminar el partido y con la función que simulará la probabilidad de ganar cada punto del primer jugador, luego ejecutar el método play_full_match().
